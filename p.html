@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duola Sport</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.4;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 1rem 0 0;
+            opacity: 0.9;
+            position: relative;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        main {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: var(--secondary);
+            bottom: -8px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            font-weight: 300;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .image-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 4/3;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-card:hover::after {
+            opacity: 1;
+        }
+
+        footer {
+            text-align: center;
+            background: var(--dark);
+            color: white;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            color: var(--gray);
+            margin: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>vaastu Consultant</h1>
+        <p>Creative | web Designing | better ui</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>About the Project</h2>
+            <p><span class="highlight">Vaastu Consultant</span> The Shree Vaastu Consultant website is a professional, responsive static website designed to showcase Vaastu Shastra services, educate clients about the benefits of Vaastu, and facilitate consultation bookings. Built with HTML5, CSS3, and JavaScript, this website offers a clean, modern interface that aligns with the spiritual and architectural principles of Vaastu.</p>
+
+            <p>This website bridges ancient Vaastu wisdom with modern web design, offering a calming, trustworthy digital experience that encourages visitors to seek consultations. Ideal for Vaastu practitioners looking to expand their client base online.</p>
+            <p><b>Here Is the link of the website: <link>https://rahul-sharma14.github.io/abc1/</b></p>
+
+            <div class="image-container">
+                <div class="image-card">
+                    <img src="h.jpeg" alt="Sport Creation">
+                </div>
+                <div class="image-card">
+                    <img src="b.jpeg" alt="Presentation Skills">
+                </div>
+                <div class="image-card">
+                    <img src="test.jpeg" alt="Editing Techniques">
+                </div>
+                <div class="image-card">
+                    <img src="contact.jpeg" alt="Editing Techniques">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Duola Sport. All rights reserved.</p>
+    </footer>
+</body>
+</html>

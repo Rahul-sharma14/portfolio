@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="resume.pdf" target="_blank" class="resume-link">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 style="font-size: 80px;">Hello, I'm Rahul</h1>
+                <p style="font-size: 40px;">I Am a <span class="highlight">Full Stack Developer, UI/UX Designer, and Creative Thinker</span></p>
+                <button class="cta-button">Contact me</button>
+            </div>
+            <div class="hero-image">
+                <img src="rahul.jpg" alt="Avatar" class="profile-pic">
+            </div>
+        </div>
+    </section>
+   
+
+
+    <!-- <section id="about" class="about">
+        <h2>About Me & My Journey</h2>
+        <div class="about-content">
+            <p>Hi! I’m Rahul, a Full-Stack Developer & UI/UX Designer passionate about creating beautiful and functional digital experiences. With a strong foundation in React, Django, and Figma, I specialize in building user-friendly web applications that are both visually appealing and highly functional.</p>
+            <h3>My Mission</h3>
+            <p>I strive to create impactful digital solutions that enhance user experiences and solve real-world problems. I love collaborating with innovative teams and startups to build something meaningful.</p>
+            <h4>My Expertise</h4>
+            <p>
+                <ol>
+                    <li>✅ Build responsive & interactive web applications</li>
+                    <li>✅ Design engaging UI/UX using Figma</li>
+                    <li>✅ Develop scalable & secure back-end solutions</li>
+                    <li>✅ Optimize performance & user experience</li>
+                </ol>
+            </p>
+        </div>
+    </section> -->
+    <section id="about" class="about">
+        <h2>About <span>Me</span> & My Journey</h2>
+        
+        <div class="about-content">
+          <p>Hi! I'm Rahul, a Full-Stack Developer & UI/UX Designer...</p>
+          
+          <h3>My Mission</h3>
+          <p>I strive to create impactful digital solutions...</p>
+          
+          <h3>My Expertise</h3>
+          <ol>
+            <li>Build responsive & interactive web applications</li>
+            <li>Design engaging UI/UX using Figma</li>
+            <li>Develop scalable & secure back-end solutions</li>
+            <li>Optimize performance & user experience</li>
+          </ol>
+        </div>
+      </section>
+    <section id="services" class="services">
+        <h2>My Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <i class="icon-web-development"></i>
+                <h3>Web Development</h3>
+                <ul>
+                    <li>Build responsive and user-friendly websites</li>
+                    <li>Optimize website performance, scalability, and security</li>
+                    <li>Utilize HTML, CSS, JavaScript, and modern frameworks</li>
+                    <li>Optimize websites for SEO and accessibility</li>
+                    <li>Partner with designers to implement UI/UX features</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <i class="icon-ui-design"></i>
+                <h3>UI/UX Design</h3>
+                <ul>
+                    <li>Conduct user research to understand needs and behaviors</li>
+                    <li>Design wireframes and interactive prototypes using Figma</li>
+                    <li>Create intuitive and visually appealing user interfaces</li>
+                    <li>Implement responsive and accessible design principles</li>
+                    <li>Test and refine designs based on user feedback</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <i class="icon-backend-development"></i>
+                <h3>GRAPHICs DESIGN</h3>
+                <ul>
+                    <li>Develop creative concepts aligned with brand identity</li>
+                    <li>Design logos, social media posts, and marketing materials</li>
+                    <li>Use tools like Photoshop, Illustrator, and Canva</li>
+                    <li>Ensure visual consistency across all digital and print assets</li>
+                    <li>Collaborate with clients to refine and finalize designs</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>Additional Skills</h2>
+        <div class="skills-container">
+            <div class="skill-box">
+                <img src="html5.jpg" alt="HTML">
+                <h3>HTML</h3>
+            </div>
+            <div class="skill-box">
+                <img src="css.jpg" alt="CSS">
+                <h3>CSS</h3>
+            </div>
+            <div class="skill-box">
+                <img src="javascript.jpg" alt="JavaScript">
+                <h3>JavaScript</h3>
+            </div>
+            <div class="skill-box">
+                <img src="react.jpg" alt="React.js">
+                <h3>React</h3>
+            </div>
+            <div class="skill-box">
+                <img src="django-logo-png_seeklogo-394570.png" alt="Django Framework">
+                <h3>Django Framework</h3>
+            </div>
+            <div class="skill-box">
+                <img src="figma.png" alt="Figma Design Tool">
+                <h3>Figma Design Tool</h3>
+            </div>
+            <div class="skill-box">
+                <img src="canva.jpg" alt="Canva Design Tool">
+                <h3>Canva Design Tool</h3>
+            </div>
+            <div class="skill-box">
+                <img src="prototype.jpg" alt="Prototyping Skills">
+                <h3>Prototyping Skills</h3>
+            </div>
+            <div class="skill-box">
+                <img src="wireframe.jpg" alt="Wireframing Skills">
+                <h3>Wireframing Skills</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>All Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <a href="p.html" target="_blank" class="project-link">
+                    <img src="h.jpeg" alt="Duola Sport">
+                    <div class="project-title">Vaastu Consultant </div>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="D.html" target="_blank" class="project-link">
+                    <img src="diary.jpg" alt="Duola Sport">
+                    <div class="project-title">Digital Diary</div>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="pok.html" target="_blank" class="project-link">
+                    <img src="pokemon.jpg" alt="Duola Sport">
+                    <div class="project-title">Pokemon</div>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="figma.html" target="_blank" class="project-link">
+                    <img src="creative.jpg" alt="Duola Sport">
+                    <div class="project-title">Designs</div>
+                </a>
+            </div>
+            
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:rahul311510@gmail.com">rahul311510@gmail.com</a></p>
+        <p>Phone: <a href="tel:7495035008">7495035008</a></p>
+        <p>LinkedIn: <a href="#" target="_blank">https://www.linkedin.com/in/rahul-sharma-9687ab2a7</a></p>
+      </section>
+      
+</body>
+</html>

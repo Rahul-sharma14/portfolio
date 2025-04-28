@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Figma Designs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+      --gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    header {
+      background: var(--gradient);
+      color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.2;
+    }
+    
+    .header-content {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin: 0;
+    }
+    
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 4rem 2rem;
+      max-width: 1400px;
+      margin: auto;
+    }
+    
+    .card {
+      background-color: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px -10px rgba(0,0,0,0.15);
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+    
+    .card:hover::before {
+      opacity: 0.03;
+    }
+    
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    
+    .card:hover img {
+      transform: scale(1.02);
+    }
+    
+    .card-content {
+      padding: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem 0;
+      color: var(--dark);
+    }
+    
+    .card-description {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--primary);
+      font-weight: 500;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: color 0.2s ease;
+    }
+    
+    .card-link:hover {
+      color: var(--primary-dark);
+    }
+    
+    .card-link svg {
+      margin-left: 0.5rem;
+      transition: transform 0.2s ease;
+    }
+    
+    .card-link:hover svg {
+      transform: translateX(3px);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--dark);
+      color: white;
+    }
+    
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1rem 0;
+    }
+    
+    .social-links a {
+      color: white;
+      opacity: 0.7;
+      transition: opacity 0.2s ease;
+    }
+    
+    .social-links a:hover {
+      opacity: 1;
+    }
+    
+    .copyright {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .gallery {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <h1>Figma Design Portfolio</h1>
+    <p>Thoughtfully crafted interfaces with attention to detail ✨</p>
+  </div>
+</header>
+
+<section class="gallery">
+  <!-- Design 7 -->
+  <a href="https://www.figma.com/design/Ju9N4XDh3Qejiu4RmLBd9J/Untitled?node-id=0-1&t=eYLEZ8ApBfBlg7jb-1" target="_blank" class="card">
+    <img src="bloomify.jpg" alt="Social Media App Design" />
+    <div class="card-content">
+      <h3 class="card-title">e-commerce</h3>
+      <p class="card-description">User-friendly shoping platform</p>
+      <span class="card-link">View in Figma
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </span>
+    </div>
+  </a>
+
+  <!-- Design 8 -->
+  <a href="https://www.figma.com/design/O3j0JsVVT2ZKfpihdePzo0/Untitled?node-id=0-1&t=JKMj9MTmaI9Ne9jv-1" target="_blank" class="card">
+    <img src="national.jpg" alt="Checkout Page Design" />
+    <div class="card-content">
+      <h3 class="card-title">National Archive of India</h3>
+      <p class="card-description">Archive of India</p>
+      <span class="card-link">View in Figma
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </span>
+    </div>
+  </a>
+  <!-- Design 1 -->
+  <a href="https://www.figma.com/design/DzZAoSpxEVGxibhBrQ6D0y/Untitled?node-id=0-1&t=ZmItoDiMFdb2chY1-1" target="_blank" class="card">
+    <img src="Desktop - 1.jpg" alt="Figma Design 1" />
+    <div class="card-content">
+      <h3 class="card-title">Thumbnail</h3>
+      <p class="card-description">Thumbnail</p>
+      <span class="card-link">View in Figma
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </span>
+    </div>
+  </a>
+
+  <!-- Design 2 -->
+  <a href="https://www.figma.com/design/bxNLLBTDinbny3ARTaotu5/Untitled?node-id=0-1&t=trohNNaGfnLXYS42-1" target="_blank" class="card">
+    <img src="food app.jpg" alt="Food App Design" />
+    <div class="card-content">
+      <h3 class="card-title">Food Delivery App</h3>
+      <p class="card-description">Mobile interface for restaurant ordering</p>
+      <span class="card-link">View in Figma
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </span>
+    </div>
+  </a>
+
+  <!-- Design 3 -->
+  <a href="https://www.figma.com/file/your-project-link2" target="_blank" class="card">
+    <img src="landing.jpg" alt="Transport App Design" />
+    <div class="card-content">
+      <h3 class="card-title">landing page</h3>
+      <p class="card-description">Modern transportation service interface</p>
+      <span class="card-link">View in Figma
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </span>
+    </div>
+  </a>
+
+  <!-- Design 4 -->
+  <a href="https://www.figma.com/file/your-project-link2" target="_blank" class="card">
+    <img src="transport2.jpg" alt="Transport App Design 2" />
+    <div class="card-content">
+      <h3 class="card-title">Business Card</h3>
+      <p class="card-description">Alternative design for transportation service</p>
+      <span class="card-link">View in Figma
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </span>
+    </div>
+  </a>
+
+  <!-- Design 5 -->
+  <a href="https://www.figma.com/file/your-project-link2" target="_blank" class="card">
+    <img src="spiderman1.jpg" alt="Spiderman App Design" />
+    <div class="card-content">
+      <h3 class="card-title">Poster</h3>
+      <p class="card-description">Superhero themed mobile poster</p>
+      <span class="card-link">View in Figma
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </span>
+    </div>
+  </a>
+
+  <!-- Design 6 -->
+  <a href="https://www.figma.com/file/your-project-link2" target="_blank" class="card">
+    <img src="signout.jpg" alt="Sign Out Design" />
+    <div class="card-content">
+      <h3 class="card-title">Auth Flow</h3>
+      <p class="card-description">Sign out confirmation interface</p>
+      <span class="card-link">View in Figma
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </span>
+    </div>
+  </a>
+  
+  
+</section>
+
+
+<footer>
+  <div class="footer-content">
+    <div class="social-links">
+      <a href="#" aria-label="Dribbble">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path>
+        </svg>
+      </a>
+      <a href="#" aria-label="Behance">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+        </svg>
+      </a>
+      <a href="#" aria-label="Twitter">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+        </svg>
+      </a>
+      <a href="#" aria-label="LinkedIn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+      </a>
+    </div>
+    <p class="copyright">&copy; 2025 Your Name — UI/UX Designer</p>
+  </div>
+</footer>
+
+</body>
+</html>
